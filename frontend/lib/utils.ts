@@ -15,6 +15,7 @@ export function getInitials(firstName: string = '', lastName: string = '') {
 export function formatDate(dateString: string | Date) {
   if (!dateString) return 'N/A';
   const date = new Date(dateString);
+  if (isNaN(date.getTime())) return 'N/A';
   return new Intl.DateTimeFormat('en-US', {
     month: 'short',
     day: 'numeric',
@@ -25,6 +26,8 @@ export function formatDate(dateString: string | Date) {
 export function getRelativeTime(dateString: string | Date) {
   if (!dateString) return '';
   const date = new Date(dateString);
+  if (isNaN(date.getTime())) return '';
+  
   const now = new Date();
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
 
@@ -38,6 +41,7 @@ export function getRelativeTime(dateString: string | Date) {
 export function calculateDaysElapsed(dateString: string | Date) {
   if (!dateString) return 0;
   const start = new Date(dateString);
+  if (isNaN(start.getTime())) return 0;
   const now = new Date();
   const diffTime = Math.abs(now.getTime() - start.getTime());
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -56,6 +60,7 @@ export function getCropDayLimit(cropType: string) {
 export function formatDateTime(dateString: string | Date) {
   if (!dateString) return 'N/A';
   const date = new Date(dateString);
+  if (isNaN(date.getTime())) return 'N/A';
   return new Intl.DateTimeFormat('en-US', {
     month: 'short',
     day: 'numeric',
