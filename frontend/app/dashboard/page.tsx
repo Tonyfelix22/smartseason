@@ -33,11 +33,15 @@ export default function DashboardPage() {
   }
 
   const stats = useMemo(() => {
-    if (!fields) return { total: 0, active: 0, harvested: 0 };
+    // Robust check for array type to prevent crashes during SSR or if API fails
+    if (!fields || !Array.isArray(fields)) {
+      return { total: 0, active: 0, harvested: 0 };
+    }
+    
     return {
       total: fields.length,
-      active: fields.filter(f => f.stage !== 'harvested').length,
-      harvested: fields.filter(f => f.stage === 'harvested').length,
+      active: fields.filter(f => f && f.stage !== 'harvested').length,
+      harvested: fields.filter(f => f && f.stage === 'harvested').length,
     };
   }, [fields]);
 
