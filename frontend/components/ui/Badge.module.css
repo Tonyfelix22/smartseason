@@ -1,0 +1,33 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+}
+
+.default {
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.role {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+}
+
+/* Stage Colors - Calm & Muted */
+.planted { background: #334155; color: #f1f5f9; }
+.growing { background: #065f46; color: #ecfdf5; }
+.ready { background: #92400e; color: #fffbeb; }
+.harvested { background: #5b21b6; color: #f5f3ff; }
+
+/* Status Colors */
+.active { background: #065f46; color: #ecfdf5; }
+.at-risk { background: #991b1b; color: #fef2f2; }
+.completed { background: #1e40af; color: #eff6ff; }

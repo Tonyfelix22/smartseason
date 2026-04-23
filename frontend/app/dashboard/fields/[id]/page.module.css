@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: var(--space-4);
+  color: var(--color-text-dim);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: var(--space-8);
+  align-items: flex-start;
+}
+
+.fieldHeader {
+  margin-bottom: var(--space-6);
+}
+
+.badges {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.infoGroup label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.infoGroup p {
+  font-size: 15px;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--color-surface);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.progress {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.updateTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}

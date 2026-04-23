@@ -1,0 +1,40 @@
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-danger-light);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  color: var(--color-danger);
+}
+
+.error svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.error p {
+  margin: 0;
+  flex: 1;
+}
+
+.dismiss {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast);
+}
+
+.dismiss:hover {
+  opacity: 0.7;
+}

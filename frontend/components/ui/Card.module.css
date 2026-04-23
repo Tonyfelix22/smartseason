@@ -1,0 +1,26 @@
+.card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  overflow: hidden;
+  transition: border-color var(--transition-normal);
+}
+
+.default {
+  background: var(--color-surface);
+}
+
+.raised {
+  background: var(--color-bg);
+  border-color: var(--color-border-strong);
+}
+
+.outline {
+  background: transparent;
+  border-color: var(--color-border);
+}
+
+/* No dramatic shadows or floating effects allowed */
+.card:hover {
+  border-color: var(--color-border-strong);
+}

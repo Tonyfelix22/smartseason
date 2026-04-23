@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.description {
+  font-size: 13px;
+  color: var(--color-text-dim);
+  max-width: 320px;
+  margin: 0;
+}
+
+.action {
+  margin-top: var(--space-4);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.action:hover {
+  color: var(--color-primary-hover);
+}
