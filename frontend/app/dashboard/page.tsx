@@ -10,6 +10,7 @@ import { ErrorMessage } from '@/components/ui/error-message';
 import { useFields } from '@/lib/hooks/useFields';
 import { useRecentUpdates } from '@/lib/hooks/useRecentUpdates';
 import { getRelativeTime } from '@/lib/utils';
+import { LayoutDashboard, Sprout, CheckCircle, AlertCircle } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function DashboardPage() {
@@ -31,9 +32,51 @@ export default function DashboardPage() {
     return <ErrorMessage message={error} />;
   }
 
+  const stats = useMemo(() => {
+    if (!fields) return { total: 0, active: 0, harvested: 0 };
+    return {
+      total: fields.length,
+      active: fields.filter(f => f.stage !== 'harvested').length,
+      harvested: fields.filter(f => f.stage === 'harvested').length,
+    };
+  }, [fields]);
+
   return (
     <div className={styles.dashboard}>
       <PageHeader title="Overview" />
+
+      {/* Stats Row */}
+      <div className={styles.statsRow}>
+        <Card className={styles.statCard}>
+          <div className={`${styles.statIcon} ${styles.iconTeal}`}>
+            <LayoutDashboard size={20} />
+          </div>
+          <div className={styles.statInfo}>
+            <span className={styles.statLabel}>Total Fields</span>
+            <span className={styles.statValue}>{stats.total}</span>
+          </div>
+        </Card>
+
+        <Card className={styles.statCard}>
+          <div className={`${styles.statIcon} ${styles.iconBlue}`}>
+            <Sprout size={20} />
+          </div>
+          <div className={styles.statInfo}>
+            <span className={styles.statLabel}>In Progress</span>
+            <span className={styles.statValue}>{stats.active}</span>
+          </div>
+        </Card>
+
+        <Card className={styles.statCard}>
+          <div className={`${styles.statIcon} ${styles.iconGreen}`}>
+            <CheckCircle size={20} />
+          </div>
+          <div className={styles.statInfo}>
+            <span className={styles.statLabel}>Harvested</span>
+            <span className={styles.statValue}>{stats.harvested}</span>
+          </div>
+        </Card>
+      </div>
 
       <div className={styles.grid}>
         {/* Main Content: Fields List */}
