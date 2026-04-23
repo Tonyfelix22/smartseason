@@ -1,8 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from .views import health_check
 
 urlpatterns = [
+    # Health check
+    path('', health_check, name='health_check_root'),
+    path('api/health/', health_check, name='health_check'),
+    
     # Django admin
     path('admin/', admin.site.urls),
 
