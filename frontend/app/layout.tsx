@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/next';
 import { AuthProvider } from '@/contexts/AuthContext';
 import './globals.css';
 
@@ -21,7 +20,6 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body>
         <AuthProvider>{children}</AuthProvider>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   );

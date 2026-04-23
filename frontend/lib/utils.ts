@@ -6,12 +6,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function getInitials(name: string) {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
+export function getInitials(firstName: string = '', lastName: string = '') {
+  const f = firstName ? firstName.charAt(0) : '';
+  const l = lastName ? lastName.charAt(0) : '';
+  return (f + l).toUpperCase() || '?';
 }
 
 export function formatDate(dateString: string | Date) {
