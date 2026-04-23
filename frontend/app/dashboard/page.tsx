@@ -10,7 +10,6 @@ import { ErrorMessage } from '@/components/ui/error-message';
 import { useFields } from '@/lib/hooks/useFields';
 import { useRecentUpdates } from '@/lib/hooks/useRecentUpdates';
 import { getRelativeTime } from '@/lib/utils';
-import { LayoutDashboard, Sprout, CheckCircle, AlertCircle } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function DashboardPage() {
@@ -53,7 +52,7 @@ export default function DashboardPage() {
       <div className={styles.statsRow}>
         <Card className={styles.statCard}>
           <div className={`${styles.statIcon} ${styles.iconTeal}`}>
-            <LayoutDashboard size={20} />
+            <span>📊</span>
           </div>
           <div className={styles.statInfo}>
             <span className={styles.statLabel}>Total Fields</span>
@@ -63,7 +62,7 @@ export default function DashboardPage() {
 
         <Card className={styles.statCard}>
           <div className={`${styles.statIcon} ${styles.iconBlue}`}>
-            <Sprout size={20} />
+            <span>🌱</span>
           </div>
           <div className={styles.statInfo}>
             <span className={styles.statLabel}>In Progress</span>
@@ -73,7 +72,7 @@ export default function DashboardPage() {
 
         <Card className={styles.statCard}>
           <div className={`${styles.statIcon} ${styles.iconGreen}`}>
-            <CheckCircle size={20} />
+            <span>✅</span>
           </div>
           <div className={styles.statInfo}>
             <span className={styles.statLabel}>Harvested</span>
