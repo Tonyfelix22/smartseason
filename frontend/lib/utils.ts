@@ -66,3 +66,12 @@ export function formatDateTime(dateString: string | Date) {
     minute: '2-digit',
   }).format(date);
 }
+
+export function getNextStages(currentStage: string): string[] {
+  const stages = ['planted', 'growing', 'ready', 'harvested'];
+  const currentIndex = stages.indexOf(currentStage.toLowerCase());
+  if (currentIndex === -1 || currentIndex === stages.length - 1) {
+    return [];
+  }
+  return stages.slice(currentIndex + 1);
+}
